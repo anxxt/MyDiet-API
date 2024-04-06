@@ -1,7 +1,4 @@
 import { MongoClient, ServerApiVersion } from 'mongodb'
-import dotenv from 'dotenv'
-
-dotenv.config()
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@mydiet.ak4vlyk.mongodb.net/?retryWrites=true&w=majority&appName=MyDiet`
 
