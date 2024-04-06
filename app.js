@@ -11,10 +11,6 @@ app.use(json())
 app.use(cors())
 app.disable('x-powered-by')
 
-app.get('/', (req, res) => {
-  res.send(`Welcome to my Diet API! - ${req.socket.remoteAddress}`)
-})
-
 app.use('/diets', createDietRouter({ dietModel: DietModel }))
 
 app.listen(PORT, () => {
