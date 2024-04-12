@@ -27,7 +27,7 @@ export class DietModel {
   static async getByName ({ name }) {
     const db = await connect()
     const query = { id_dieta: { $regex: name, $options: 'i' } }
-    const result = await db.find(query).sort({ _id: -1 }).limit(1).toArray()
+    const result = await db.find(query, { projection: { _id: 0 } }).sort({ _id: -1 }).limit(1).toArray()
     return result[0]
   }
 }
